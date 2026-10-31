@@ -1,11 +1,10 @@
-# PLAN ONLY — do not deploy until Atlas confirms + token health OK.
-# Suggested service name: kcwt-meta-images
-# Enable Serverless (sleep after idle) to keep cost under $5/mo incremental.
+# Deployed as kcwt-meta-images on scintillating-upliftment (Railway Pro).
+# Enable Serverless (sleep after idle) to keep incremental cost under $5/mo.
 [build]
 builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
 
 [deploy]
-healthcheckPath = "/i/0000000000000000000000000000000000000000000000000000000000000000.jpg"
-healthcheckTimeout = 5
+healthcheckPath = "/health"
+healthcheckTimeout = 30
 restartPolicyType = "ON_FAILURE"
